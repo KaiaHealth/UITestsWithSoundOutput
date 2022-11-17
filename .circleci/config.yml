@@ -30,6 +30,13 @@ jobs:
   run-ui-tests:
     <<: *defaults
     steps:
+      - run:
+          name: Attach null audio driver
+          command: |
+            git clone --depth 1 --branch v0.1.1 https://github.com/kyleneideck/BackgroundMusic.git
+            cd BackgroundMusic
+            sudo xcodebuild -project BGMApp/BGMAppTests/NullAudio/AudioDriverExamples.xcodeproj -target NullAudio DSTROOT="/" install
+            sudo launchctl kickstart -kp system/com.apple.audio.coreaudiod || sudo killall coreaudiod
       - checkout
       - *bundle_install
       - run:
