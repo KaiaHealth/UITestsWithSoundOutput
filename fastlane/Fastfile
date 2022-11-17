@@ -1,0 +1,60 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  before_all do
+    setup_ci(
+      provider: "circleci"
+    )
+  end
+
+  desc "Build without archiving"
+  lane :build_without_archiving do
+    build_ios_app(
+      export_method: "development",
+      skip_codesigning: true,
+      skip_package_ipa: true,
+    )
+  end
+
+  desc "Run tests"
+  lane :run_all_tests do
+    run_tests()
+  end
+
+  desc "Run unit tests"
+  lane :run_unit_tests do
+    run_tests(
+      scheme: "UITestsWithSoundOutputUnitTests",
+      buildlog_path: "./fastlane/fastlane-buildlog",
+      derived_data_path: "~/Library/Developer/Xcode/DerivedData",
+      result_bundle: true
+    )
+  end
+
+  desc "Run UI tests"
+  lane :run_ui_tests do
+    run_tests(
+      scheme: "UITestsWithSoundOutputUITests",
+      buildlog_path: "./fastlane/fastlane-buildlog",
+      derived_data_path: "~/Library/Developer/Xcode/DerivedData",
+      result_bundle: true
+    )
+  end
+
+end

@@ -1,0 +1,40 @@
+version: 2.1
+
+defaults: &defaults
+  macos:
+    xcode: "13.4.1"
+
+bundle_install: &bundle_install
+  run:
+    name: bundle install
+    command: |
+      bundle install --path .bundle
+
+copy_test_results_to_artifacts: &copy_test_results_to_artifacts
+  run:
+    name: Copy test results to artifacts folder
+    command: |
+      mkdir /tmp/test-results
+      cd /tmp/test-results
+      mv $(find ~/project -name "*.xcresult") .
+      tar -cvzf test-results.tar.gz *.xcresult
+    when: on_fail
+
+store_test_artifacts: &store_test_artifacts
+  store_artifacts:
+    path: /tmp/test-results/test-results.tar.gz
+    destination: test-results.tar.gz
+    when: on_fail
+
+jobs:
+  run-ui-tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - *bundle_install
+      - run:
+          name: Run UI Tests
+          command: |
+            bundle exec fastlane run_ui_tests
+      - *copy_test_results_to_artifacts
+      - *store_test_artifacts
