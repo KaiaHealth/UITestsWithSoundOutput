@@ -15,6 +15,7 @@
 		C87794662926314A004D2945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87794642926314A004D2945 /* LaunchScreen.storyboard */; };
 		C87794712926314B004D2945 /* UITestsWithSoundOutputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87794702926314B004D2945 /* UITestsWithSoundOutputTests.swift */; };
 		C877947B2926314B004D2945 /* UITestsWithSoundOutputUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C877947A2926314B004D2945 /* UITestsWithSoundOutputUITests.swift */; };
+		C8CD56DA29263DED00499142 /* sample-5s.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C877948929263ABA004D2945 /* sample-5s.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C87794702926314B004D2945 /* UITestsWithSoundOutputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestsWithSoundOutputTests.swift; sourceTree = "<group>"; };
 		C87794762926314B004D2945 /* UITestsWithSoundOutputUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITestsWithSoundOutputUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C877947A2926314B004D2945 /* UITestsWithSoundOutputUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestsWithSoundOutputUITests.swift; sourceTree = "<group>"; };
+		C877948929263ABA004D2945 /* sample-5s.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-5s.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				C87794622926314A004D2945 /* Assets.xcassets */,
 				C87794642926314A004D2945 /* LaunchScreen.storyboard */,
 				C87794672926314A004D2945 /* Info.plist */,
+				C877948929263ABA004D2945 /* sample-5s.mp4 */,
 			);
 			path = UITestsWithSoundOutput;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				C87794662926314A004D2945 /* LaunchScreen.storyboard in Resources */,
 				C87794632926314A004D2945 /* Assets.xcassets in Resources */,
 				C877946129263147004D2945 /* Main.storyboard in Resources */,
+				C8CD56DA29263DED00499142 /* sample-5s.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
