@@ -38,3 +38,10 @@ jobs:
             bundle exec fastlane run_ui_tests
       - *copy_test_results_to_artifacts
       - *store_test_artifacts
+
+workflows:
+  version: 2.1
+
+  Run UI tests:
+    jobs:
+      - run-ui-tests
