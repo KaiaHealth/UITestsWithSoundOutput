@@ -3,6 +3,7 @@ version: 2.1
 defaults: &defaults
   macos:
     xcode: "15.3.0"
+    resource_class: macos.m1.medium.gen1
 
 bundle_install: &bundle_install
   run:
