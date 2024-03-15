@@ -3,4 +3,4 @@
 
 skip_build(true)
 ensure_devices_found(true)
-device("iPhone 8 (15.5)")
+device("iPhone 15 (17.4)")
