@@ -2,7 +2,7 @@ version: 2.1
 
 defaults: &defaults
   macos:
-    xcode: "13.4.1"
+    xcode: "15.3.0"
 
 bundle_install: &bundle_install
   run:
@@ -33,11 +33,10 @@ jobs:
       - run:
           name: Attach null audio driver
           command: |
-            git clone --depth 1 --branch v0.1.1 https://github.com/kyleneideck/BackgroundMusic.git
-            cd BackgroundMusic
-            sudo xcodebuild -project BGMApp/BGMAppTests/NullAudio/AudioDriverExamples.xcodeproj -target NullAudio DSTROOT="/" install
-            sudo launchctl kickstart -kp system/com.apple.audio.coreaudiod || sudo killall coreaudiod
-            cd .. && sudo rm -rf BackgroundMusic
+            git clone --depth 1 https://github.com/russellporter/NullAudioDriver.git
+            
+            ./NullAudioDriver/install.sh
+            sudo rm -rf NullAudioDriver
       - checkout
       - *bundle_install
       - run:
