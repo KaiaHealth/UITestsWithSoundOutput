@@ -13,9 +13,7 @@ final class ViewController: UIViewController {
     @IBOutlet var statusLabel: UILabel!
 
     let item = AVPlayerItem(
-        url: URL(
-            fileURLWithPath: Bundle.main.path(forResource: "sample-5s", ofType: "mp4")!
-        )
+        url: URL(string: "https://d32oopmphic0po.cloudfront.net/v1/videos/program/332/5e0e1e208f224e4fabfb6c81c4806fdd_toe-reach-loop-v1.mp4")!
     )
     lazy var player = AVPlayer(playerItem: item)
 
