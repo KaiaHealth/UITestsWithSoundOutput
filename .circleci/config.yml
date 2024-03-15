@@ -31,13 +31,6 @@ jobs:
   run-ui-tests:
     <<: *defaults
     steps:
-      - run:
-          name: Attach null audio driver
-          command: |
-            git clone --depth 1 https://github.com/russellporter/NullAudioDriver.git
-            
-            ./NullAudioDriver/install.sh
-            sudo rm -rf NullAudioDriver
       - checkout
       - *bundle_install
       - run:
